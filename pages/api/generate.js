@@ -1,10 +1,8 @@
 // pages/api/generate.js
 export default function handler(req, res) {
-  if (req.method === "POST") {
-    // simple random key (stateless)
+  // GET request use karo instead of POST
+  if (req.method === "GET") {
     const newKey = Math.random().toString(36).substring(2, 12);
-
-    // directly response bhej do
     res.status(200).json({
       success: true,
       apiKey: newKey,
